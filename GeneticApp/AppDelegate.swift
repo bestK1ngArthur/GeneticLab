@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  GeneticApp
 //
-//  Created by a.belkov on 04/12/2018.
+//  Created by bestK1ng on 04/12/2018.
 //  Copyright © 2018 bestK1ng. All rights reserved.
 //
 
