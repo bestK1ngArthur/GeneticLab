@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A146F1421B9941F003B658E /* Gene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1321B9941F003B658E /* Gene.swift */; };
-		6A146F1621B99468003B658E /* Chromosome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1521B99468003B658E /* Chromosome.swift */; };
+		6A146F1421B9941F003B658E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1321B9941F003B658E /* Link.swift */; };
+		6A146F1621B99468003B658E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1521B99468003B658E /* Route.swift */; };
+		6A146F1821B99BD9003B658E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1721B99BD9003B658E /* Node.swift */; };
 		6ACB0CFF21B6807F00370A9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB0CFE21B6807F00370A9F /* AppDelegate.swift */; };
 		6ACB0D0121B6807F00370A9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB0D0021B6807F00370A9F /* ViewController.swift */; };
 		6ACB0D0321B6808100370A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACB0D0221B6808100370A9F /* Assets.xcassets */; };
@@ -16,8 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A146F1321B9941F003B658E /* Gene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
-		6A146F1521B99468003B658E /* Chromosome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chromosome.swift; sourceTree = "<group>"; };
+		6A146F1321B9941F003B658E /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		6A146F1521B99468003B658E /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		6A146F1721B99BD9003B658E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		6ACB0CFB21B6807F00370A9F /* GeneticApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeneticApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACB0CFE21B6807F00370A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ACB0D0021B6807F00370A9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A146F1921B99CF9003B658E /* Net Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6A146F1721B99BD9003B658E /* Node.swift */,
+				6A146F1321B9941F003B658E /* Link.swift */,
+				6A146F1521B99468003B658E /* Route.swift */,
+			);
+			path = "Net Logic";
+			sourceTree = "<group>";
+		};
 		6ACB0CF221B6807F00370A9F = {
 			isa = PBXGroup;
 			children = (
@@ -57,10 +69,9 @@
 		6ACB0CFD21B6807F00370A9F /* GeneticApp */ = {
 			isa = PBXGroup;
 			children = (
+				6A146F1921B99CF9003B658E /* Net Logic */,
 				6ACB0CFE21B6807F00370A9F /* AppDelegate.swift */,
 				6ACB0D0021B6807F00370A9F /* ViewController.swift */,
-				6A146F1321B9941F003B658E /* Gene.swift */,
-				6A146F1521B99468003B658E /* Chromosome.swift */,
 				6ACB0D0221B6808100370A9F /* Assets.xcassets */,
 				6ACB0D0421B6808100370A9F /* Main.storyboard */,
 				6ACB0D0721B6808100370A9F /* Info.plist */,
@@ -140,9 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ACB0D0121B6807F00370A9F /* ViewController.swift in Sources */,
-				6A146F1421B9941F003B658E /* Gene.swift in Sources */,
+				6A146F1821B99BD9003B658E /* Node.swift in Sources */,
+				6A146F1421B9941F003B658E /* Link.swift in Sources */,
 				6ACB0CFF21B6807F00370A9F /* AppDelegate.swift in Sources */,
-				6A146F1621B99468003B658E /* Chromosome.swift in Sources */,
+				6A146F1621B99468003B658E /* Route.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

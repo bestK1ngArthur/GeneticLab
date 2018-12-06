@@ -1,5 +1,5 @@
 //
-//  Chromosome.swift
+//  Node.swift
 //  GeneticApp
 //
 //  Created by bestK1ng on 06/12/2018.
@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Chromosome {
+class Node {
 
-    let genes: [Gene] = []
+    let index: Int
+    
+    init(_ index: Int) {
+        self.index = index
+    }
 }
