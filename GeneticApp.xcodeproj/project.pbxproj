@@ -10,8 +10,9 @@
 		6A146F1421B9941F003B658E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1321B9941F003B658E /* Link.swift */; };
 		6A146F1621B99468003B658E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1521B99468003B658E /* Route.swift */; };
 		6A146F1821B99BD9003B658E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1721B99BD9003B658E /* Node.swift */; };
+		6A146F1C21BB0BB5003B658E /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A146F1B21BB0BB5003B658E /* Population.swift */; };
 		6ACB0CFF21B6807F00370A9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB0CFE21B6807F00370A9F /* AppDelegate.swift */; };
-		6ACB0D0121B6807F00370A9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB0D0021B6807F00370A9F /* ViewController.swift */; };
+		6ACB0D0121B6807F00370A9F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB0D0021B6807F00370A9F /* MainViewController.swift */; };
 		6ACB0D0321B6808100370A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACB0D0221B6808100370A9F /* Assets.xcassets */; };
 		6ACB0D0621B6808100370A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACB0D0421B6808100370A9F /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,9 +21,10 @@
 		6A146F1321B9941F003B658E /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		6A146F1521B99468003B658E /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		6A146F1721B99BD9003B658E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		6A146F1B21BB0BB5003B658E /* Population.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population.swift; sourceTree = "<group>"; };
 		6ACB0CFB21B6807F00370A9F /* GeneticApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeneticApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACB0CFE21B6807F00370A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6ACB0D0021B6807F00370A9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6ACB0D0021B6807F00370A9F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6ACB0D0221B6808100370A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ACB0D0521B6808100370A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6ACB0D0721B6808100370A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 				6A146F1721B99BD9003B658E /* Node.swift */,
 				6A146F1321B9941F003B658E /* Link.swift */,
 				6A146F1521B99468003B658E /* Route.swift */,
+				6A146F1B21BB0BB5003B658E /* Population.swift */,
 			);
 			path = "Net Logic";
 			sourceTree = "<group>";
@@ -71,7 +74,7 @@
 			children = (
 				6A146F1921B99CF9003B658E /* Net Logic */,
 				6ACB0CFE21B6807F00370A9F /* AppDelegate.swift */,
-				6ACB0D0021B6807F00370A9F /* ViewController.swift */,
+				6ACB0D0021B6807F00370A9F /* MainViewController.swift */,
 				6ACB0D0221B6808100370A9F /* Assets.xcassets */,
 				6ACB0D0421B6808100370A9F /* Main.storyboard */,
 				6ACB0D0721B6808100370A9F /* Info.plist */,
@@ -150,7 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACB0D0121B6807F00370A9F /* ViewController.swift in Sources */,
+				6A146F1C21BB0BB5003B658E /* Population.swift in Sources */,
+				6ACB0D0121B6807F00370A9F /* MainViewController.swift in Sources */,
 				6A146F1821B99BD9003B658E /* Node.swift in Sources */,
 				6A146F1421B9941F003B658E /* Link.swift in Sources */,
 				6ACB0CFF21B6807F00370A9F /* AppDelegate.swift in Sources */,

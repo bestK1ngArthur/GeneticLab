@@ -27,5 +27,4 @@ class Route {
     init(_ links: [Link]) {
         self.links = links
     }
-    
 }

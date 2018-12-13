@@ -23,3 +23,27 @@ class Link {
         self.weight = weight
     }
 }
+
+extension Link {
+    
+    static func generateLinks(size: Int, range: Range<Int>) -> [Link] {
+        
+        var links: [Link] = []
+        
+        for firstNodeIndex in 0..<size {
+            for secondNodeIndex in 0..<size {
+
+                if firstNodeIndex == secondNodeIndex {
+                    continue
+                }
+                
+                let weight = Int.random(in: range)
+                let link = Link(from: Node(firstNodeIndex), to: Node(secondNodeIndex), weight: weight)
+                
+                links.append(link)
+            }
+        }
+        
+        return links
+    }
+}
