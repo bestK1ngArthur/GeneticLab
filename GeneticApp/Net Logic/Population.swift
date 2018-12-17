@@ -126,6 +126,9 @@ extension Population {
             for secondRoute in bestRoutes {
                 //if firstRoute.generalWeight != secondRoute.generalWeight {
                     let route = Population.merge(first: firstRoute, second: secondRoute)
+                    if Int.random(in: 0..<1) % 2 == 0 {
+                        route.makeMutation()
+                    }
                     route.makeMutation()
                     newRoutes.append(route)
                 //}
