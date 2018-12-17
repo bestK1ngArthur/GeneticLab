@@ -11,7 +11,7 @@ import Foundation
 /// Chromosome
 class Route {
 
-    let links: [Link]
+    var links: [Link]
     
     var generalWeight: Weight {
         
@@ -26,5 +26,15 @@ class Route {
     
     init(_ links: [Link]) {
         self.links = links
+    }
+    
+    func makeMutation() {
+        
+        let range = 1..<(self.links.count-1)
+        let index = Int.random(in: range)
+        
+        var link = links[index]
+        link = Link(from: Node(Int.random(in: range)), to: Node(Int.random(in: range)), weight: link.weight)
+        links[index] = link
     }
 }

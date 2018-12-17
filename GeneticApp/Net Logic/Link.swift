@@ -17,6 +17,14 @@ class Link {
     let to: Node
     let weight: Weight
     
+    var reversed: Link {
+        
+        let fromNode = self.to
+        let toNode = self.from
+        
+        return Link(from: fromNode, to: toNode, weight: self.weight)
+    }
+    
     init(from: Node, to: Node, weight: Weight) {
         self.from = from
         self.to = to

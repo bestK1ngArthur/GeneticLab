@@ -39,7 +39,7 @@ extension Population {
             indexesSet.remove(at: indexToRemove)
         }
 
-        if let indexToRemove = indexesSet.index(of: from.index) {
+        if let indexToRemove = indexesSet.index(of: to.index) {
             indexesSet.remove(at: indexToRemove)
         }
 
@@ -49,7 +49,7 @@ extension Population {
             
             var nodeIndexes = Set(indexesSet)
 
-            var links: [Link] = []
+            var currentLinks: [Link] = []
             var fromNode = from
             while nodeIndexes.isEmpty == false {
              
@@ -57,26 +57,106 @@ extension Population {
                     nodeIndexes.remove(toIndex)
 
                     let toNode = Node(toIndex)
-
-                    if let link = links.first(where: { link -> Bool in
-                        return ((link.from.index == fromNode.index) && (link.to.index == toNode.index)) ||
-                               ((link.from.index == toNode.index) && (link.to.index == fromNode.index))
-                    }) {
-                        links.append(link)
+                    
+                    if let link = self.getLink(links: links, fromNode: fromNode, toNode: toNode) {
+                        currentLinks.append(link)
                     }
                     
                     fromNode = toNode
                 }
             }
             
-            routes.append(Route(links))
+            if let link = self.getLink(links: links, fromNode: fromNode, toNode: to) {
+                currentLinks.append(link)
+            }
+            
+            routes.append(Route(currentLinks))
         }
-        
+
         return Population(routes: routes)
     }
     
-    private func getLink(links: [Link], fromNode: Node, toNode: Node) -> Link? {
+    private static func getLink(links: [Link], fromNode: Node, toNode: Node) -> Link? {
         
-       return nil
+        var resultLink: Link?
+        
+        for link in links {
+            
+            if (link.from.index == fromNode.index) && (link.to.index == toNode.index) {
+                resultLink = link
+                break
+            } else if (link.from.index == toNode.index) && (link.to.index == fromNode.index) {
+                resultLink = link.reversed
+            }
+        }
+            
+        return resultLink
+    }
+}
+
+extension Population {
+    
+    static func merge(first: Route, second: Route) -> Route {
+        
+        let range = 1..<(first.links.count-1)
+        let firstGeneIndex = Int.random(in: range)
+        let secondGeneIndex = Int.random(in: range)
+        
+        var links = first.links
+        
+        links[firstGeneIndex] = second.links[firstGeneIndex]
+        links[secondGeneIndex] = second.links[secondGeneIndex]
+        
+        return Route(links)
+    }
+    
+    func nextPopulation() -> Population {
+        
+        // Selection
+        
+        let sortedRoutes = routes.sorted { (first, second) -> Bool in
+            return first.generalWeight < second.generalWeight
+        }
+        let bestRoutes: [Route] = Array(sortedRoutes.prefix(upTo: 10))
+        
+        // Crossing & mutating
+        
+        var newRoutes: [Route] = []
+        for firstRoute in bestRoutes {
+            for secondRoute in bestRoutes {
+                //if firstRoute.generalWeight != secondRoute.generalWeight {
+                    let route = Population.merge(first: firstRoute, second: secondRoute)
+                    route.makeMutation()
+                    newRoutes.append(route)
+                //}
+            }
+        }
+        
+        newRoutes.shuffle()
+
+//        if newRoutes.count < Population.size {
+//            newRoutes.append(contentsOf: sortedRoutes)
+//        }
+        
+        return Population(routes: Array(newRoutes.prefix(upTo: Population.size))) ?? self
+    }
+    
+    func nextPopulation(count: Int) -> Population {
+        var population = self
+        
+        for _ in 0..<count {
+            population = population.nextPopulation()
+        }
+        
+        return population
+    }
+    
+    func bestRoute() -> Route {
+        
+        let sortedRoutes = routes.sorted { (first, second) -> Bool in
+            return first.generalWeight < second.generalWeight
+        }
+
+        return sortedRoutes.first!
     }
 }
